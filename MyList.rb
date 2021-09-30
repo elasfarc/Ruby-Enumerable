@@ -1,7 +1,6 @@
-require_relative 'MyEnumerable.rb'
+require_relative 'MyEnumerable'
 
-class MyList 
-
+class MyList
   include Enumerables
 
   def initialize(*args)
@@ -10,29 +9,18 @@ class MyList
 
   def each
     i = 0
-    while i < @list.length 
+    while i < @list.length
       yield @list[i] if block_given?
       i += 1
     end
-    
   end
-
-
 end
 
-
-# x = MyList.new(5,8,9)
-#  x.all? do |num|
-#   10
-#  end
-
 list = MyList.new(1, 2, 3, 4, 9)
-# p list.all? {|e| e < 5}
-# p list.all? {|e| e > 5}
+list.all? { |e| e < 5 }
+list.all? { |e| e > 5 }
 
-# # p list.any? {|e| e == 2}
-# # p list.any? {|e| e == 5}
+list.any? { |e| e == 2 }
+list.any? { |e| e == 5 }
 
-# pp list.filter { |e| e.even? }
-
-
+list.filter { |e| e.even? }
