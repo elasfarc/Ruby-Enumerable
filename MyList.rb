@@ -26,11 +26,13 @@ end
 #   10
 #  end
 
-list = MyList.new(1, 2, 3, 4)
-list.all? {|e| e < 5}
-list.all? {|e| e > 5}
+list = MyList.new(1, 2, 3, 4, 9)
+# p list.all? {|e| e < 5}
+# p list.all? {|e| e > 5}
 
-p list.any? {|e| e == 2}
-p list.any? {|e| e == 5}
+# # p list.any? {|e| e == 2}
+# # p list.any? {|e| e == 5}
 
-list.filter {|e| e.even?}
+# pp list.filter { |e| e.even? }
+
+
